@@ -70,6 +70,16 @@
     <a class="access-button btn-send-access-code-email" href='mailto:?subject={{_ "ui.join my spyfall game" }}&body={{ accessLink }}'>
       <i class="fa fa-envelope-o"></i>
     </a>
+
+    <span class="access-button-separator"></span>
+
+    <a class="access-button btn-share-access-code" href="javascript:void(0);">
+      <i class="fa fa-share-alt"></i>
+    </a>
+  </div>
+
+  <div class="lobby-flashmessages">
+    {{> flashMessages}}
   </div>
 
   <div class="qrcode-container" style="display: none;">
@@ -264,6 +274,6 @@
     <br>
     {{{_ "ui.footer" }}}
     <br>
-    <a href="https://github.com/mpcovcd/spyfall" target="_blank">https://github.com/mpcovcd/spyfall</a>
+    <a href="https://github.com/JvSomeren/spyfall" target="_blank">https://github.com/JvSomeren/spyfall</a> based on <a href="https://github.com/pkoenig10/spyfall">https://github.com/pkoenig10/spyfall</a>
   </div>
 </template>

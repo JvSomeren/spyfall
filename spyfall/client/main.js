@@ -441,6 +441,24 @@ Template.lobby.events({
   'click .btn-toggle-qrcode': function () {
     $(".qrcode-container").toggle();
   },
+  'click .btn-share-access-code': function() {
+    if(navigator.share) {
+      var shareData = {
+        title: 'Spyfall',
+        text: '{{_ "ui.join my spyfall game" }}',
+        url: getAccessLink(),
+      }
+
+      navigator.share(shareData)
+        .then(() => FlashMessages.sendSuccess(TAPi18n.__("ui.successfully shared")))
+        .catch((error) => {
+          FlashMessages.sendError(TAPi18n.__("ui.failed sharing"));
+          console.error('Sharing failed', error);
+        });
+    } else {
+      FlashMessages.sendError(TAPi18n.__("ui.your system doesnt support sharing"));
+    }
+  },
   'click .btn-remove-player': function (event) {
     var playerID = $(event.currentTarget).data('player-id');
     Players.remove(playerID);
