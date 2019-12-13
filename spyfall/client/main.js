@@ -445,7 +445,7 @@ Template.lobby.events({
     if(navigator.share) {
       var shareData = {
         title: 'Spyfall',
-        text: '{{_ "ui.join my spyfall game" }}',
+        text: TAPi18n.__("ui.join my spyfall game"),
         url: getAccessLink(),
       }
 
