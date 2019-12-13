@@ -1,8 +1,10 @@
 # Meteor Spyfall
 
+	This repository is a fork of https://github.com/pkoenig10/spyfall
+
 Spyfall on your mobile device!
 
-This is the code that currently runs [http://spyfall.crabhat.com](http://spyfall.crabhat.com). It's a simple site built as a learning project, so definitely don't use it as an example of Meteor best practices. Pull requests welcome!
+This is the code that currently runs [https://spyfall.some.re](https://spyfall.some.re). It's a simple site built as a learning project, so definitely don't use it as an example of Meteor best practices. Pull requests welcome!
 
 ## Disclaimer
 
@@ -34,7 +36,7 @@ Please make sure that the translations you provide are as close as possible to t
 
 Clone the repository:
 
-	git clone https://github.com/mpcovcd/spyfall.git ./spyfall
+	git clone https://github.com/JvSomeren/spyfall.git ./spyfall
 
 Enter the spyfall directory:
 
@@ -42,7 +44,7 @@ Enter the spyfall directory:
 
 Edit the locations file as required:
 
-	nano lib/locations.js
+	vim lib/locations.js
 
 Run the meteor server to test locally:
 
@@ -52,7 +54,10 @@ Sadly, production deployment has gotten a little trickier since meteor.com stopp
 
 ## Docker
 
-To run this instance in a docker container, check out [noamokman/docker-spyfall](https://github.com/noamokman/docker-spyfall)
+	cd spyfall
+	docker run --name my-spyfall -p 3000:3000 -e METEOR_SETTINGS="$(cat settings/settings.json)" -d jvsomeren/spyfall
+
+Then access it via `http://localhost:3000`.
 
 ## Links
 
